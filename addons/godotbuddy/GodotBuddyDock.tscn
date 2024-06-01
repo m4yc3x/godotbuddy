@@ -1,0 +1,142 @@
+[gd_scene load_steps=5 format=3 uid="uid://ceydcuucirryj"]
+
+[ext_resource type="Texture2D" uid="uid://6or4ll6dbm3x" path="res://addons/godotbuddy/loading.png" id="1_e5div"]
+[ext_resource type="Script" path="res://addons/godotbuddy/LoadingIcon.gd" id="2_m8dlm"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_drddc"]
+font_size = 30
+
+[sub_resource type="GDScript" id="GDScript_lo38g"]
+script/source = "extends MarginContainer
+
+
+# Called when the node enters the scene tree for the first time.
+func _ready():
+	pass # Replace with function body.
+
+
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta):
+	pass
+"
+
+[node name="Godot Buddy" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="WelcomeMessage" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="WelcomeLabel" type="Label" parent="VBoxContainer/WelcomeMessage"]
+layout_mode = 2
+text = "Welcome!"
+label_settings = SubResource("LabelSettings_drddc")
+
+[node name="WelcomeBlurb" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+
+[node name="WelcomeLabel2" type="Label" parent="VBoxContainer/WelcomeBlurb"]
+layout_mode = 2
+text = "Register on Groq and supply an API key to start. You can type @filename.gd to quickly import file contents. Model llama3-70b-8192 in use."
+autowrap_mode = 3
+
+[node name="Links" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_right = 10
+
+[node name="LinkButton" type="LinkButton" parent="VBoxContainer/Links"]
+layout_mode = 2
+size_flags_horizontal = 0
+text = "https://console.groq.com/keys"
+uri = "https://console.groq.com/keys"
+
+[node name="LinkButton2" type="LinkButton" parent="VBoxContainer/Links"]
+layout_mode = 2
+size_flags_horizontal = 8
+text = "https://github.com/m4yc3x"
+uri = "https://github.com/m4yc3x"
+
+[node name="GroqAPIKey" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 0
+
+[node name="LineEdit" type="LineEdit" parent="VBoxContainer/GroqAPIKey"]
+layout_mode = 2
+placeholder_text = "Type your Groq.com API key here..."
+
+[node name="AIChatResponse" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/AIChatResponse"]
+layout_mode = 2
+focus_mode = 2
+bbcode_enabled = true
+text = "AI Chat will appear here."
+scroll_following = true
+selection_enabled = true
+
+[node name="AIPromptEditor" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 15
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 15
+script = SubResource("GDScript_lo38g")
+
+[node name="TextEdit" type="TextEdit" parent="VBoxContainer/AIPromptEditor"]
+custom_minimum_size = Vector2(0, 120)
+layout_mode = 2
+placeholder_text = "Type your prompt to AI..."
+
+[node name="AISubmission" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 0
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 30
+
+[node name="Button" type="Button" parent="VBoxContainer/AISubmission"]
+layout_mode = 2
+text = "Submit Prompt"
+
+[node name="HTTPRequest" type="HTTPRequest" parent="VBoxContainer"]
+timeout = 300.0
+
+[node name="LoadingIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -177.0
+offset_top = -15.0
+offset_right = 177.0
+offset_bottom = 15.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_e5div")
+expand_mode = 3
+stretch_mode = 5
+script = ExtResource("2_m8dlm")
