@@ -1,8 +1,6 @@
 @tool
 extends EditorPlugin
 
-# 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
-
 var dock
 # Declare the nodes
 var button
