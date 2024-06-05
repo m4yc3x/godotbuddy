@@ -1,3 +1,4 @@
+![Godot Buddy Icon](godotbuddy.png "Godot Buddy Icon")
 # GodotBuddy
 
 Welcome to **GodotBuddy**! GodotBuddy is an advanced plugin for the Godot 4 Engine designed to assist you in coding and game design. It leverages AI to provide intelligent code suggestions, documentation, and more, all within the Godot Editor.
@@ -23,6 +24,8 @@ Welcome to **GodotBuddy**! GodotBuddy is an advanced plugin for the Godot 4 Engi
 3. **Interact with the AI**: Type your queries or code in the text editor and press the submit button. The AI will respond with suggestions or code snippets. 
 
 You can use `@filename.gd` to reference a file in the editor, regardless of subdirectory. (finds first match, use a full path if you have multiple files with the same name)
+
+![Godot Buddy Interface](gbicon.jpg)
 
 ## Contributing
 
