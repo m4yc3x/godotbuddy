@@ -1,3 +1,7 @@
+## Statement on Godot Engine and Godot Foundation
+
+After careful consideration, I have decided to discontinue maintaining the Godotbuddy plugin. I believe that the Godot Engine and the Godot Foundation have made significant missteps in their community management and decision-making processes. Their recent actions suggest a disregard for diverse opinions, which has led to an exclusionary environment. As someone committed to fostering an inclusive and supportive developer community, I find it challenging to continue my contributions under these circumstances.
+
 ![Godot Buddy Icon](gbicon.jpg "Godot Buddy Icon")
 # GodotBuddy
 
